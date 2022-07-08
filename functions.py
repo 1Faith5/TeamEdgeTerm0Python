@@ -20,9 +20,26 @@ print("------------------- Challenge 1 -------------------")
 # **** Challenge 1: Problem 1 ****
 # Write a function called print_message() that prints any message you want.
 
+def add(num1, num2): 
+	return num1 + num2
+
+amount_of_money_earned_from_the_lottery = add(43000, 2000)
+print("Congratulations you have just earned the loottery, amonut: " + str(amount_of_money_earned_from_the_lottery))
 
 # **** Challenge 1: Problem 2 ****
 # Write a function called print_five_messages() that calls print_message() five times.
+
+#def print_message (Wifi Disconnected):
+	#print("Wifi Disconnected")
+
+
+	#print_message("Wifi Disconnected")
+	#print_message("Wifi Disconnected")
+	#print_message("Wifi Disconnected")
+	#print_message("Wifi Disconnected")
+	#print_message("Wifi Disconnected")
+
+
 
 
 # **** Challenge 1: Problem 3 ****
@@ -30,9 +47,19 @@ print("------------------- Challenge 1 -------------------")
 # once or five times. Then call one of the two functions above based on what the user decides.
 
 
+def get_user_input():
+	decision = input("Would you like to print message 5 times")
+
+if decision == (5):
+	print("here you go 40 dollars")
+
+
+
+
+
 # **** Challenge 1: Problem 4 ****
 # Write a function called print_greeting() that prints a greeting message to the user.
-
+print_greeting("Ohayo")
 
 # **** Challenge 1: Problem 5 ****
 # Write a function called print_closing() that prints a goodbye message to the user.

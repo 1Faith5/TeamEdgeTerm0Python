@@ -75,11 +75,15 @@ print("------------------- Challenge 3 -------------------")
 # Snowing: Wear gloves and a scarf 
 
 # Here's a variable to get you started:
-weather = "rainy"
+weather = "sunny"
 temp = int("78")
 wind= ("high")
 if temp >= int("70"):
    print("wear a t-shirt and sunglasses")
+if weather == "sunny":
+   print("You should probably wear shorts")
+if wind ("high") and weather == "sunny":
+   print("it's hot but it will also be cold, grab a jacket")
 
 
 
@@ -153,6 +157,8 @@ print("------------------- Challenge 5 -------------------")
 # Your challenge is to translate the steps above into conditionals which will evaluate if the 
 # year stored in a variable is/was a leap year.
 
+print("hey, what year is it 
+year = input()
 
 
 
