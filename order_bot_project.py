@@ -41,9 +41,15 @@
 # Remember: Your user should be able to order at least 3 items (a drink, meal, and dessert item). 
 
 # --------------------------------------------
-
-
-
+drink_price = 0
+meal_price = 0
+dessert_price = 0
+total_bill = drink_price + meal_price + dessert_price
+total_people = 3
+tax = 0.0725 * (total_bill) # california sales tax 
+each_person_pays = (total_bill + tax) / total_people
+item_price = 0
+item_name = ""
 # -------------------------------------------- 
 
 # Part 2:
@@ -53,7 +59,29 @@
 # - Print each item available and it's cost. You should have at least 3 items available (a drink, meal, and dessert item). 
 
 # --------------------------------------------
+meal_menu = ["Steak", "Spaghetti", "Pizza", "Burgers"]
+meal_price = [29.99, 14.99, 14.99, 9.99]
 
+drink_menu = ["Coke", "Wine", "Beer", "Lemonade"]
+drink_price = [2.99, 29.99, 7.99, 4.99]
+
+dessert_menu = ["Cake", "Ice Cream", "Cupcake", "Macaroons"]
+dessert_price = [15.99, 6.99, 3.99, 6.99]
+
+def print_menu(): 
+  print("Meals:")
+  print("-----------------------------")
+  for i in range(len(meal_menu)): 
+    print(meal_menu[i] + " Price: $" + str(meal_price[i]))
+  print("Drinks:")
+  print("-----------------------------")
+  for i in range(len(drink_menu)):
+    print(drink_menu[i] + " Price: $" + str(drink_price[i]))
+  print("Desserts:")
+  print("-----------------------------")
+  for i in range(len(dessert_menu)): 
+    print(dessert_menu[i] + " Price: $" + str(dessert_price[i]))
+  print("-----------------------------")
 
 
 
@@ -72,6 +100,33 @@
 
 # --------------------------------------------
 
+order_type = input("What would you like to order ? A Meal, Dessert, or a Drink?")
+# Should be a Meal, Drink, or Dessert
+order = input("Awesome! Pick an item from the list above.")
+item_name = order
+
+
+def take_order(): 
+  if str(order_type) == "Meal": 
+    for i in range(len(meal_menu)): 
+      if(order == meal_menu[i]): 
+        return float(meal_price[i])
+      else: 
+        return -1
+  elif str(order_type) == "Drink": 
+    for i in range(len(drink_menu)): 
+      if(order == drink_menu[i]): 
+        return float(drink_price[i])
+      else: 
+        return -1
+  elif str(order_type) == "Dessert":
+    for i in range(len(dessert_menu)): 
+      if(order == dessert_menu[i]): 
+        return float(dessert_price[i])
+      else: 
+        return -1
+  else: 
+    return -1
 
 
 
@@ -97,6 +152,13 @@
 
 # -------------------------------------------- 
 
+def cost_of_order(): 
+  tip = input("How much would you like to tip? ex. 15% would be 0.15.")
+  tip = float(tip)
+  tip_amount = tip * total_price
+  tax_amount = tax * total_price
+  # print("Cost of all ordered items: " str(total_price))
+  return "Total Cost of the order: " + str(total_price + tax_amount + tip_amount)
 
 
 
@@ -124,7 +186,12 @@
 
 # -------------------------------------------- 
 
-
+def print_receipt(item_name, item_price): 
+  print("Cost of each item: ")
+  print("Item Price: " + str(item_price))
+  print("Item Name: " + str(item_name))
+  print("Tax: " + str(tax * item_price))
+  print("Tip: " + str(tip * item_price))
 
 
 # -------------------------------------------- 
@@ -135,7 +202,16 @@
 
 # --------------------------------------------
 
+print_menu()
 
+price = take_order()
+item_price = price
+total_price += price
+print(price)
+
+print(cost_of_order())
+
+print_receipt(item_name, item_price)
 
 
 
