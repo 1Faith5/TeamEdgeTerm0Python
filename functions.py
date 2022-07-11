@@ -15,6 +15,10 @@
   # Challenge 1: Let's try to write some basic functions.
 # -------------------------------------------- 
 
+from ast import FloorDiv
+from lib2to3.pgen2.token import COMMENT
+
+
 print("------------------- Challenge 1 -------------------")
 
 # **** Challenge 1: Problem 1 ****
@@ -48,9 +52,9 @@ print("Congratulations you have just earned the loottery, amonut: " + str(amount
 
 
 def get_user_input():
-	decision = input("Would you like to print message 5 times")
+	Answer = input("Would you like to print message 5 times")
 
-if decision == (5):
+if Answer == (5):
 	print("here you go 40 dollars")
 
 
