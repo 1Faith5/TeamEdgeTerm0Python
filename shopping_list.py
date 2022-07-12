@@ -22,6 +22,13 @@ print(welcome_message)
 
 
 #-->Todo: declare a shopping_list list
+shopping_list = ("lemonade")
+
+if active: 
+    print("check")
+else:
+    print("goodbye")
+
 
 
 def prompt_user():
@@ -30,13 +37,19 @@ def prompt_user():
 
     return reply
 
-def check_answer(ans):
-    pass
+def check_answer(item):
+     if item in shopping_list:
+         remove_item(item)
+         print(shopping_list)
+    else: 
+        add_item(item)
+       print(shopping_list) 
 
-
-def add_item():
 #this function can take in a string and store it in an array
-    pass
+
+def add_item(item):
+    shopping_list.append(item)
+
 
 
 def remove_item():
